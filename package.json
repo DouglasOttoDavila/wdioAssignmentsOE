@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "wdio": "wdio run wdio.conf.js"
+    "wdio": "wdio run wdio.conf.js",
+    "report-open": "allure open allure-report",
+    "report-generate": "allure generate --clean allure-results",
+    "pretest": "rimraf allure-results && rimraf allure-report && rimraf test-screenshots && rimraf wdio-logs"
   },
   "author": "Douglas D'Avila",
   "license": "ISC",
@@ -19,6 +22,7 @@
     "@wdio/mocha-framework": "^7.26.0",
     "@wdio/spec-reporter": "^7.26.0",
     "chromedriver": "^107.0.3",
+    "rimraf": "^3.0.2",
     "wdio-chromedriver-service": "^8.0.0"
   },
   "dependencies": {
